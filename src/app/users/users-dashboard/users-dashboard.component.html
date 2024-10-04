@@ -1,2 +1,12 @@
-<p>users-dashboard works!</p>
-<app-user-form></app-user-form>
+<app-header></app-header>
+
+<div class="container">
+  <app-user-form (cancionAgregada)="listaReproduccion.agregarCancion($event)" class="half-screen"></app-user-form>
+  <app-lista-reproduccion #listaReproduccion class="half-screen"></app-lista-reproduccion>
+</div>
+
+<div class="container">
+  <app-artista (artistaAgregado)="listaArtistas.agregarArtista($event)" class="half-screen"></app-artista>
+  <app-lista-artistas #listaArtistas class="half-screen"></app-lista-artistas>
+</div>
+<app-reproductor></app-reproductor>

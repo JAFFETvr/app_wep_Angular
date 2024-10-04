@@ -15,9 +15,7 @@ import { UsersModule } from './users/users.module';
     AppRoutingModule ,
     UsersModule,
     HttpClientModule
-
-
-  ],
+],
   providers: [
     provideClientHydration()
   ],

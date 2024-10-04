@@ -1,0 +1,31 @@
+<h1>Agregar Artista</h1>
+<div class="form-container">
+    <form id="artistForm" (submit)="agregarArtista($event)">
+        <div class="form-group">
+            <label for="nombre">Nombre del artista:</label>
+            <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre"  required>
+        </div>
+
+        <div class="form-group">
+            <label for="apellido">Apellido del artista:</label>
+            <input type="text" id="apellido" [(ngModel)]="apellido" name="apellido"  required>
+        </div>
+
+        <div class="form-group">
+            <label for="pais">País de origen:</label>
+            <input type="text" id="pais" [(ngModel)]="pais" name="pais"  required>
+        </div>
+
+        <div class="form-group">
+            <label for="edad">Edad del artista:</label>
+            <input type="number" id="edad" [(ngModel)]="edad" name="edad"  required>
+        </div>
+
+        <div class="form-group">
+            <label for="generoMusical">Género musical principal:</label>
+            <input type="text" id="generoMusical" [(ngModel)]="generoMusical" name="generoMusical"  required>
+        </div>
+
+        <button type="submit">Agregar Artista</button>
+    </form>
+</div>
