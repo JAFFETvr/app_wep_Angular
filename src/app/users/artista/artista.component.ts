@@ -11,15 +11,14 @@ export class ArtistaComponent {
   pais: string = '';
   edad: number | null = null;
   generoMusical: string = '';
-  private idCounter: number = 1; 
 
-  @Output() artistaAgregado = new EventEmitter<any>(); 
+  @Output() artistaAgregado = new EventEmitter<any>();
 
   agregarArtista(event: Event) {
-    event.preventDefault(); 
+    event.preventDefault();
 
     const nuevoArtista = {
-      id: this.idCounter++,
+      id: 0,  
       nombre: this.nombre,
       apellido: this.apellido,
       pais: this.pais,

@@ -9,4 +9,4 @@
   <app-artista (artistaAgregado)="listaArtistas.agregarArtista($event)" class="half-screen"></app-artista>
   <app-lista-artistas #listaArtistas class="half-screen"></app-lista-artistas>
 </div>
-<app-reproductor></app-reproductor>
+<app-reproductor [canciones]="canciones"></app-reproductor>

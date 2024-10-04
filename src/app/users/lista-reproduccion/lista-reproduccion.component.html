@@ -3,33 +3,33 @@
   <ul class="item-list">
     <li class="list-item" *ngFor="let cancion of canciones">
       <span class="item-text">
-        {{ cancion.id }} - 
-        <input 
-          *ngIf="cancionEditando?.id === cancion.id" 
-          [(ngModel)]="cancionEditando.titulo" 
+        {{ cancion.id }} -
+        <input
+          *ngIf="cancionEditando?.id === cancion.id"
+          [(ngModel)]="cancionEditando.titulo"
           placeholder="Título">
         <span *ngIf="cancionEditando?.id !== cancion.id">{{ cancion.titulo }}</span>
-        - 
-        <input 
-          *ngIf="cancionEditando?.id === cancion.id" 
-          [(ngModel)]="cancionEditando.album" 
+        -
+        <input
+          *ngIf="cancionEditando?.id === cancion.id"
+          [(ngModel)]="cancionEditando.album"
           placeholder="Álbum">
         <span *ngIf="cancionEditando?.id !== cancion.id">{{ cancion.album }}</span>
       </span>
       <div class="item-actions">
-        <button 
-          class="edit-btn" 
-          *ngIf="cancionEditando?.id !== cancion.id" 
+        <button
+          class="edit-btn"
+          *ngIf="cancionEditando?.id !== cancion.id"
           (click)="editarCancion(cancion)">Editar</button>
-        <button 
-          class="edit-btn" 
-          *ngIf="cancionEditando?.id === cancion.id" 
+        <button
+          class="edit-btn"
+          *ngIf="cancionEditando?.id === cancion.id"
           (click)="guardarEdicion()">Guardar</button>
-        <button 
-          class="delete-btn" 
+        <button
+          class="delete-btn"
           (click)="eliminarCancion(cancion.id)">Eliminar</button>
-        <button 
-          class="details-btn" 
+        <button
+          class="details-btn"
           (click)="toggleDetalles(cancion.id)">
           {{ detallesVisibles[cancion.id] ? 'Ocultar Detalles' : '*' }}
         </button>
@@ -43,4 +43,5 @@
       </div>
     </li>
   </ul>
+
 </div>

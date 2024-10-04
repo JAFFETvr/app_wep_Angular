@@ -24,14 +24,11 @@ export class UserFormComponent {
     genero: '',
     anio: '',
     duracion: '',
-    album: ''
+    album: '',
+    artistaId: 0
   };
 
-  private idCounter = 0; 
-
   agregarCancion() {
-    this.idCounter++; 
-    this.nuevaCancion.id = this.idCounter; 
     this.cancionAgregada.emit(this.nuevaCancion);
     
     this.nuevaCancion = {
@@ -40,7 +37,8 @@ export class UserFormComponent {
       genero: '',
       anio: '',
       duracion: '',
-      album: ''
+      album: '',
+      artistaId: 0
     };
   }
 }
