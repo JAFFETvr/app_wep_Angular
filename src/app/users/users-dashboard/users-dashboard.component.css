@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .half-screen {
+    flex: 1;
+    max-width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  

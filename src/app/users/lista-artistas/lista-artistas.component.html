@@ -1,0 +1,44 @@
+<h1>Lista de Artistas</h1>
+<div class="list-container">
+    <ul class="item-list">
+        <li class="list-item" *ngFor="let artista of artistas">
+            <span class="item-text">
+                ID: {{ artista.id }} 
+                <input 
+                    *ngIf="artistaEditando?.id === artista.id" 
+                    [(ngModel)]="artistaEditando.nombre" 
+                    placeholder="Nombre">
+                <span *ngIf="artistaEditando?.id !== artista.id">{{ artista.nombre }}</span>
+                
+                <input 
+                    *ngIf="artistaEditando?.id === artista.id" 
+                    [(ngModel)]="artistaEditando.apellido" 
+                    placeholder="Apellido">
+                <span *ngIf="artistaEditando?.id !== artista.id"> --{{ artista.apellido }}</span>
+
+                <input 
+                    *ngIf="artistaEditando?.id === artista.id" 
+                    [(ngModel)]="artistaEditando.pais" 
+                    placeholder="País">
+                <span *ngIf="artistaEditando?.id !== artista.id"> --{{ artista.pais }}</span>
+                
+                <input 
+                    *ngIf="artistaEditando?.id === artista.id" 
+                    [(ngModel)]="artistaEditando.edad" 
+                    placeholder="Edad">
+                <span *ngIf="artistaEditando?.id !== artista.id">--{{ artista.edad }} años</span>
+
+                <input 
+                    *ngIf="artistaEditando?.id === artista.id" 
+                    [(ngModel)]="artistaEditando.generoMusical" 
+                    placeholder="Género Musical">
+                <span *ngIf="artistaEditando?.id !== artista.id">--{{ artista.generoMusical }}</span>
+            </span>
+            <div class="item-actions">
+                <button class="edit-btn" *ngIf="artistaEditando?.id !== artista.id" (click)="editarArtista(artista)">Editar</button>
+                <button class="save-btn" *ngIf="artistaEditando?.id === artista.id" (click)="guardarEdicion()">Guardar</button>
+                <button class="delete-btn" (click)="eliminarArtista(artista.id)">Eliminar</button>
+            </div>
+        </li>
+    </ul>
+</div>

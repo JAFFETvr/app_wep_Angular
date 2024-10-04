@@ -1,0 +1,18 @@
+<div id="Conte">
+    <h1>{{form.h1}}</h1>
+    <div id="Cont">
+        <div id="Conteiner">
+            <label>{{form.label1}}</label>
+            <input type="text" [(ngModel)]="nuevaCancion.titulo">
+            <label>{{form.label2}}</label>
+            <input type="text" [(ngModel)]="nuevaCancion.genero">
+            <label>{{form.label3}}</label>
+            <input type="date" [(ngModel)]="nuevaCancion.anio">
+            <label>{{form.label4}}</label>
+            <input type="number" [(ngModel)]="nuevaCancion.duracion">
+            <label>{{form.label5}}</label>
+            <input type="text" [(ngModel)]="nuevaCancion.album">
+            <button (click)="agregarCancion()">{{form.button}}</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<h1>Lista de Reproducción</h1>
+<div class="list-container">
+  <ul class="item-list">
+    <li class="list-item" *ngFor="let cancion of canciones">
+      <span class="item-text">
+        {{ cancion.id }} -
+        <input
+          *ngIf="cancionEditando?.id === cancion.id"
+          [(ngModel)]="cancionEditando.titulo"
+          placeholder="Título">
+        <span *ngIf="cancionEditando?.id !== cancion.id">{{ cancion.titulo }}</span>
+        -
+        <input
+          *ngIf="cancionEditando?.id === cancion.id"
+          [(ngModel)]="cancionEditando.album"
+          placeholder="Álbum">
+        <span *ngIf="cancionEditando?.id !== cancion.id">{{ cancion.album }}</span>
+      </span>
+      <div class="item-actions">
+        <button
+          class="edit-btn"
+          *ngIf="cancionEditando?.id !== cancion.id"
+          (click)="editarCancion(cancion)">Editar</button>
+        <button
+          class="edit-btn"
+          *ngIf="cancionEditando?.id === cancion.id"
+          (click)="guardarEdicion()">Guardar</button>
+        <button
+          class="delete-btn"
+          (click)="eliminarCancion(cancion.id)">Eliminar</button>
+        <button
+          class="details-btn"
+          (click)="toggleDetalles(cancion.id)">
+          {{ detallesVisibles[cancion.id] ? 'Ocultar Detalles' : '*' }}
+        </button>
+      </div>
+      <div *ngIf="detallesVisibles[cancion.id]" class="cancion-detalles">
+        <p><strong>Título:</strong> {{ cancion.titulo }}</p>
+        <p><strong>Álbum:</strong> {{ cancion.album }}</p>
+        <p><strong>Género:</strong> {{ cancion.genero }}</p>
+        <p><strong>Año de Lanzamiento:</strong> {{ cancion.anio }}</p>
+        <p><strong>Duración:</strong> {{ cancion.duracion }} minutos</p>
+      </div>
+    </li>
+  </ul>
+
+</div>

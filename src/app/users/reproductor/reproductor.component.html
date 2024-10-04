@@ -1,0 +1,13 @@
+<div class="player-container" *ngIf="cancionActual">
+    <div class="player-info">
+      <h2>{{ cancionActual.titulo }}</h2>
+      <p>{{ cancionActual.artista }} - {{ cancionActual.album }}</p>
+    </div>
+  
+    <div class="player-controls">
+      <button class="control-btn" (click)="anteriorCancion()">Anterior</button>
+      <button class="control-btn" (click)="togglePlayPause()">{{ isPlaying ? 'Pausa' : 'Reproducir' }}</button>
+      <button class="control-btn" (click)="siguienteCancion()">Siguiente</button>
+    </div>
+  </div>
+  
